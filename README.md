@@ -2,10 +2,7 @@
 
 Includes the following services:
 
-- [Prometheus](https://github.com/prometheus/prometheus)
-- [Grafana](https://github.com/grafana/grafana)
-
-## Config example
-
-- [`prometheus.yml`](https://raw.githubusercontent.com/prometheus/prometheus/main/documentation/examples/prometheus.yml)
-- [`grafana.ini`](https://raw.githubusercontent.com/grafana/grafana/main/conf/sample.ini)
+| Component  | Repository                                         | Config example                                                                                              | Documentation                                             |
+| ---------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Prometheus | [GitHub](https://github.com/prometheus/prometheus) | [`prometheus.yml`](https://github.com/prometheus/prometheus/raw/main/documentation/examples/prometheus.yml) | [Link](https://prometheus.io/docs/introduction/overview/) |
+| Grafana    | [GitHub](https://github.com/grafana/grafana)       | [`grafana.ini`](https://github.com/grafana/grafana/raw/main/conf/sample.ini)                                | [Link](https://grafana.com/docs/grafana/latest/)          |
