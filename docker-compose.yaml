@@ -22,3 +22,10 @@ services:
     ports:
       - 3000:3000
     restart: unless-stopped
+
+  pushgateway:
+    container_name: pushgateway
+    image: prom/pushgateway
+    ports:
+      - 9091:9091
+    restart: unless-stopped
