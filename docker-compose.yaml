@@ -6,7 +6,7 @@ services:
       - "--config.file=/etc/prometheus/prometheus.yml"
       - "--web.enable-lifecycle" # https://prometheus.io/docs/prometheus/latest/migration/#prometheus-lifecycle
     volumes:
-      - ./prometheus:/etc/prometheus
+      - ./components/prometheus:/etc/prometheus
     ports:
       - 9090:9090
     restart: unless-stopped
@@ -17,7 +17,7 @@ services:
     command:
       - "--config=/etc/grafana/grafana.ini"
     volumes:
-      - ./grafana:/etc/grafana
+      - ./components/grafana:/etc/grafana
     ports:
       - 3000:3000
     restart: unless-stopped
