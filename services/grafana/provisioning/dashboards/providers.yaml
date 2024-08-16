@@ -1,0 +1,13 @@
+# https://grafana.com/docs/grafana/latest/administration/provisioning/#dashboards
+---
+apiVersion: 1
+
+providers:
+  - name: Preset dashboards
+    orgId: 1
+    folder: preset
+    type: file
+    disableDeletion: true
+    allowUiUpdates: false
+    options:
+      path: /etc/grafana/dashboards
