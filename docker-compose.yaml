@@ -7,6 +7,7 @@ services:
       - "--web.enable-lifecycle" # https://prometheus.io/docs/prometheus/latest/migration/#prometheus-lifecycle
     volumes:
       - ./components/prometheus:/etc/prometheus
+      - ./data/prometheus:/prometheus/data # https://prometheus.io/docs/prometheus/latest/storage/#operational-aspects
     ports:
       - 9090:9090
     restart: unless-stopped
