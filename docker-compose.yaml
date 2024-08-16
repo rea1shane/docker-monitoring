@@ -51,3 +51,14 @@ services:
     volumes:
       - "/:/host:ro,rslave"
     restart: unless-stopped
+
+  blackbox_exporter:
+    container_name: blackbox_exporter
+    image: prom/blackbox-exporter
+    command:
+      - "--config.file=/etc/blackbox_exporter/blackbox.yml"
+    volumes:
+      - ./services/blackbox_exporter:/etc/blackbox_exporter
+    ports:
+      - 9115:9115
+    restart: unless-stopped

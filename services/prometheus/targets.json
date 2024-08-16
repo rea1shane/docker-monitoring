@@ -38,5 +38,13 @@
         "labels": {
             "job": "node_exporter"
         }
+    },
+    {
+        "targets": [
+            "blackbox_exporter:9115"
+        ],
+        "labels": {
+            "job": "blackbox_exporter"
+        }
     }
 ]
