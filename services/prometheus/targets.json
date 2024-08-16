@@ -30,5 +30,13 @@
         "labels": {
             "job": "alertmanager"
         }
+    },
+    {
+        "targets": [
+            "host.docker.internal:9100"
+        ],
+        "labels": {
+            "job": "node_exporter"
+        }
     }
 ]

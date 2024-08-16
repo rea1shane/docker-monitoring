@@ -40,3 +40,14 @@ services:
     ports:
       - 9093:9093
     restart: unless-stopped
+
+  node_exporter:
+    container_name: node_exporter
+    image: prom/node-exporter
+    command:
+      - "--path.rootfs=/host"
+    network_mode: host
+    pid: host
+    volumes:
+      - "/:/host:ro,rslave"
+    restart: unless-stopped
