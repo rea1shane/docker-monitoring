@@ -6,7 +6,7 @@ up:
 down:
 	docker compose down
 
-# Clean up components' persistent data
+# Clean up services' persistent data
 .PHONY: clean
 clean:
 	rm -rf data
