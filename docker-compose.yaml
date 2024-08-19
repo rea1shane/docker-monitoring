@@ -32,7 +32,7 @@ services:
     image: prom/pushgateway
     command:
       - --persistence.file=/data/metric.store
-      - --persistence.interval=1m
+      - --persistence.interval=5m
     volumes:
       - ./data/pushgateway:/data
     ports:
@@ -44,8 +44,11 @@ services:
     image: prom/alertmanager
     command:
       - --config.file=/etc/alertmanager/alertmanager.yml
+      - --storage.path=/data
+      - --data.maintenance-interval=5m
     volumes:
       - ./resources/alertmanager:/etc/alertmanager
+      - ./data/alertmanager:/data
     ports:
       - 9093:9093
     restart: unless-stopped
