@@ -19,6 +19,7 @@ services:
       - --config=/etc/grafana/grafana.ini
     volumes:
       - ./resources/grafana:/etc/grafana
+      - ./data/grafana:/var/lib/grafana
     ports:
       - 3000:3000
     environment:
@@ -29,6 +30,11 @@ services:
   pushgateway:
     container_name: pushgateway
     image: prom/pushgateway
+    command:
+      - --persistence.file=/data/metric.store
+      - --persistence.interval=1m
+    volumes:
+      - ./data/pushgateway:/data
     ports:
       - 9091:9091
     restart: unless-stopped
