@@ -3,8 +3,8 @@ services:
     container_name: prometheus
     image: prom/prometheus
     command:
-      - "--config.file=/etc/prometheus/prometheus.yml"
-      - "--web.enable-lifecycle" # https://prometheus.io/docs/prometheus/latest/migration/#prometheus-lifecycle
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --web.enable-lifecycle # https://prometheus.io/docs/prometheus/latest/migration/#prometheus-lifecycle
     volumes:
       - ./resources/prometheus:/etc/prometheus
       - ./data/prometheus:/prometheus/data # https://prometheus.io/docs/prometheus/latest/storage/#operational-aspects
@@ -16,7 +16,7 @@ services:
     container_name: grafana
     image: grafana/grafana-oss
     command:
-      - "--config=/etc/grafana/grafana.ini"
+      - --config=/etc/grafana/grafana.ini
     volumes:
       - ./resources/grafana:/etc/grafana
     ports:
@@ -34,7 +34,7 @@ services:
     container_name: alertmanager
     image: prom/alertmanager
     command:
-      - "--config.file=/etc/alertmanager/alertmanager.yml"
+      - --config.file=/etc/alertmanager/alertmanager.yml
     volumes:
       - ./resources/alertmanager:/etc/alertmanager
     ports:
@@ -45,18 +45,18 @@ services:
     container_name: node_exporter
     image: prom/node-exporter
     command:
-      - "--path.rootfs=/host"
+      - --path.rootfs=/host
     network_mode: host
     pid: host
     volumes:
-      - "/:/host:ro,rslave"
+      - /:/host:ro,rslave
     restart: unless-stopped
 
   blackbox_exporter:
     container_name: blackbox_exporter
     image: prom/blackbox-exporter
     command:
-      - "--config.file=/etc/blackbox_exporter/blackbox.yml"
+      - --config.file=/etc/blackbox_exporter/blackbox.yml
     volumes:
       - ./resources/blackbox_exporter:/etc/blackbox_exporter
     ports:
@@ -68,7 +68,7 @@ services:
     container_name: loki
     image: grafana/loki
     command:
-      - "-config.file=/etc/loki/config.yaml"
+      - -config.file=/etc/loki/config.yaml
     volumes:
       - ./resources/loki:/etc/loki
     ports:
@@ -78,7 +78,7 @@ services:
     container_name: promtail
     image: grafana/promtail
     command:
-      - "-config.file=/etc/promtail/config.yaml"
+      - -config.file=/etc/promtail/config.yaml
     volumes:
       - ./resources/promtail:/etc/promtail
       - ./data/promtail:/tmp
