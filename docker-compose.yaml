@@ -83,6 +83,7 @@ services:
       - -config.file=/etc/loki/config.yaml
     volumes:
       - ./resources/loki:/etc/loki
+      - ./data/loki:/loki
     ports:
       - 3100:3100
 
