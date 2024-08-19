@@ -21,6 +21,9 @@ services:
       - ./resources/grafana:/etc/grafana
     ports:
       - 3000:3000
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true # for test
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin # for test
     restart: unless-stopped
 
   pushgateway:
