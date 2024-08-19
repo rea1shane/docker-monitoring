@@ -1,10 +1,12 @@
+COMPOSE_NAME = monitoring
+
 .PHONY: up
 up:
-	docker compose up -d
+	docker compose -p $(COMPOSE_NAME) up -d
 
 .PHONY: down
 down:
-	docker compose down
+	docker compose -p $(COMPOSE_NAME) down
 
 # Clean up services' persistent data
 .PHONY: clean
