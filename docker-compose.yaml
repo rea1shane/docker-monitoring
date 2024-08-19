@@ -86,6 +86,7 @@ services:
       - ./data/loki:/loki
     ports:
       - 3100:3100
+    restart: unless-stopped
 
   promtail:
     container_name: promtail
@@ -97,3 +98,4 @@ services:
       - ./data/promtail:/tmp
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
+    restart: unless-stopped
