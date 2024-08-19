@@ -62,3 +62,25 @@ services:
     ports:
       - 9115:9115
     restart: unless-stopped
+
+  # https://raw.githubusercontent.com/grafana/loki/main/production/docker-compose.yaml
+  loki:
+    container_name: loki
+    image: grafana/loki
+    command:
+      - "-config.file=/etc/loki/config.yaml"
+    volumes:
+      - ./services/loki:/etc/loki
+    ports:
+      - 3100:3100
+
+  promtail:
+    container_name: promtail
+    image: grafana/promtail
+    command:
+      - "-config.file=/etc/promtail/config.yaml"
+    volumes:
+      - ./services/promtail:/etc/promtail
+      - ./data/promtail:/tmp
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro

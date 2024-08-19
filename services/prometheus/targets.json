@@ -46,5 +46,21 @@
         "labels": {
             "job": "blackbox_exporter"
         }
+    },
+    {
+        "targets": [
+            "loki:3100"
+        ],
+        "labels": {
+            "job": "loki"
+        }
+    },
+    {
+        "targets": [
+            "promtail:80"
+        ],
+        "labels": {
+            "job": "promtail"
+        }
     }
 ]

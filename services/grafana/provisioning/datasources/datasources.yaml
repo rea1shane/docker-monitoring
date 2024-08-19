@@ -10,3 +10,11 @@ datasources:
     access: proxy
     isDefault: true
     editable: false
+
+  - # https://grafana.com/docs/grafana/latest/datasources/loki/#provisioning-examples
+    name: Loki
+    type: loki
+    url: http://loki:3100
+    access: proxy
+    isDefault: false
+    editable: false
