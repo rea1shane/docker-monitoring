@@ -11,28 +11,24 @@ scrape_configs:
         refresh_interval: 5s
     relabel_configs:
       - source_labels: [__meta_docker_container_name]
-        target_label: container
+        regex: /(.*)
+        target_label: container_name
       - source_labels: [__meta_docker_container_id]
         target_label: container_id
-      - source_labels: [__meta_docker_container_label_com_docker_compose_service]
-        target_label: compose_service
-      - source_labels: [__meta_docker_network_mode]
-        target_label: network_mode
       - source_labels: [__meta_docker_container_image]
         target_label: container_image
+      - source_labels: [__meta_docker_network_mode]
+        target_label: network_mode
       - source_labels: [__meta_docker_container_label_com_docker_compose_project]
         target_label: compose_project
       - source_labels: [__meta_docker_container_label_com_docker_compose_service]
-        target_label: job
+        target_label: compose_service
       - source_labels: [__meta_docker_container_label_com_docker_compose_container_number]
         target_label: compose_container_number
       - source_labels: [__meta_docker_container_label_com_docker_compose_version]
         target_label: compose_version
       - source_labels: [__meta_docker_container_name]
-        regex: '/(.*)'
-        target_label: container_name
-      - source_labels: [__meta_docker_container_name]
         action: replace
-        regex: '/(.*)'
-        replacement: '/var/lib/docker/containers/$1/*.log'
+        regex: /(.*)
+        replacement: /var/lib/docker/containers/$1/*.log
         target_label: __path__
