@@ -5,28 +5,58 @@ clients:
   - url: http://loki:3100/loki/api/v1/push
 
 scrape_configs:
-  - job_name: docker
+  - # https://grafana.com/docs/loki/latest/send-data/promtail/configuration/#docker_sd_configs
+    job_name: docker
     docker_sd_configs:
       - host: unix:///var/run/docker.sock
         refresh_interval: 5s
     relabel_configs:
+      - source_labels: [__meta_docker_container_log_stream]
+        target_label: log_stream
+
+      - source_labels: [__meta_docker_container_id]
+        target_label: container_id
+
       - source_labels: [__meta_docker_container_name]
         regex: /(.*)
         target_label: container_name
-      - source_labels: [__meta_docker_container_id]
-        target_label: container_id
-      - source_labels: [__meta_docker_container_image]
-        target_label: container_image
-      - source_labels: [__meta_docker_network_mode]
+
+      - source_labels: [__meta_docker_container_network_mode]
         target_label: network_mode
+
+      - source_labels: [__meta_docker_network_id]
+        target_label: network_id
+
+      - source_labels: [__meta_docker_network_name]
+        target_label: network_name
+
+      - source_labels: [__meta_docker_network_scope]
+        target_label: network_scope
+
+      - source_labels: [__meta_docker_network_ip]
+        target_label: container_ip_in_network
+
+      - source_labels: [__meta_docker_port_private]
+        target_label: container_private_port
+
+      - source_labels: [__meta_docker_port_public]
+        target_label: container_public_port
+
+      - source_labels: [__meta_docker_port_public_ip]
+        target_label: container_public_ip
+
       - source_labels: [__meta_docker_container_label_com_docker_compose_project]
         target_label: compose_project
+
       - source_labels: [__meta_docker_container_label_com_docker_compose_service]
         target_label: compose_service
+
       - source_labels: [__meta_docker_container_label_com_docker_compose_container_number]
         target_label: compose_container_number
+
       - source_labels: [__meta_docker_container_label_com_docker_compose_version]
         target_label: compose_version
+
       - source_labels: [__meta_docker_container_name]
         action: replace
         regex: /(.*)
