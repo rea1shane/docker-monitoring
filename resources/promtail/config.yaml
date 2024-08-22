@@ -3,6 +3,9 @@ positions:
 
 clients:
   - url: http://loki:3100/loki/api/v1/push
+    external_labels:
+      host_name: ${HOST_NAME}
+      host_ip: ${HOST_IP}
 
 scrape_configs:
   - # https://grafana.com/docs/loki/latest/send-data/promtail/configuration/#docker_sd_configs

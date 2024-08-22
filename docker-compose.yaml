@@ -94,9 +94,13 @@ services:
     image: grafana/promtail
     command:
       - -config.file=/etc/promtail/config.yaml
+      - -config.expand-env=true # https://grafana.com/docs/loki/latest/send-data/promtail/configuration/#use-environment-variables-in-the-configuration
     volumes:
       - ./resources/promtail:/etc/promtail
       - ./data/promtail:/tmp
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
+    environment:
+      - HOST_NAME=${HOST_NAME}
+      - HOST_IP=${HOST_IP}
     restart: unless-stopped
