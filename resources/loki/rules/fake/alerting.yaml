@@ -3,7 +3,7 @@ groups:
     rules:
       - alert: Error occurred
         expr: |
-          count_over_time({container_id=~".+"} | logfmt | level = "error" [1h]) > 0
+          count_over_time({container_id=~".+"} | logfmt level | level = "error" [1h]) > 0
         for: 0m
         labels:
           severity: page
