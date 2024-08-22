@@ -1,6 +1,6 @@
 # https://grafana.com/docs/loki/latest/configure/
 ---
-auth_enabled: false
+auth_enabled: false # https://grafana.com/docs/loki/latest/operations/multi-tenancy/
 
 common:
   path_prefix: /loki
@@ -23,8 +23,21 @@ schema_config:
         prefix: index_
         period: 24h
 
+# https://grafana.com/docs/loki/latest/configure/#ruler
+# https://github.com/grafana/loki/issues/7589
 ruler:
+  wal:
+    dir: /loki/ruler-wal
+  storage:
+    type: local
+    local:
+      directory: /etc/loki/rules
   alertmanager_url: http://alertmanager:9093
+  enable_api: true
+  remote_write:
+    enabled: true
+    client:
+      url: http://prometheus:9090/api/v1/write
 
 analytics:
   reporting_enabled: false

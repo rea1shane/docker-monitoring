@@ -5,6 +5,7 @@ services:
     command:
       - --config.file=/etc/prometheus/prometheus.yml
       - --web.enable-lifecycle # https://prometheus.io/docs/prometheus/latest/migration/#prometheus-lifecycle
+      - --web.enable-remote-write-receiver
     volumes:
       - ./resources/prometheus:/etc/prometheus
       - ./data/prometheus:/prometheus/data # https://prometheus.io/docs/prometheus/latest/storage/#operational-aspects

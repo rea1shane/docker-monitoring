@@ -1,0 +1,7 @@
+groups:
+  - name: Loki logs disk usage
+    interval: 1m
+    rules:
+      - record: logs_bytes_over_time_1m
+        expr: |
+          bytes_over_time({container_name=~".+"}[1m])
