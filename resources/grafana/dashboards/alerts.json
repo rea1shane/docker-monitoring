@@ -183,7 +183,10 @@
         }
     ],
     "schemaVersion": 39,
-    "tags": [],
+    "tags": [
+        "prometheus",
+        "alerts"
+    ],
     "templating": {
         "list": []
     },
