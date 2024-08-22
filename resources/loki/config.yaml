@@ -33,6 +33,7 @@ ruler:
     local:
       directory: /etc/loki/rules
   alertmanager_url: http://alertmanager:9093
+  enable_alertmanager_v2: true
   enable_api: true
   remote_write:
     enabled: true
