@@ -2,6 +2,9 @@ groups:
   - name: Loki logs disk usage
     interval: 1m
     rules:
-      - record: logs_bytes_over_time_1m
+      - record: logs:bytes_over_time_1m
         expr: |
           bytes_over_time({container_name=~".+"}[1m])
+      - record: container_name_and_container_id:logs:rate_1m
+        expr: |
+          sum by (container_name, container_id) (rate({container_name=~".+"}[1m]))
