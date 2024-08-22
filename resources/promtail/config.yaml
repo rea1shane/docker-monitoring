@@ -21,41 +21,11 @@ scrape_configs:
         regex: /(.*)
         target_label: container_name
 
-      - source_labels: [__meta_docker_container_network_mode]
-        target_label: network_mode
-
-      - source_labels: [__meta_docker_network_id]
-        target_label: network_id
-
-      - source_labels: [__meta_docker_network_name]
-        target_label: network_name
-
-      - source_labels: [__meta_docker_network_scope]
-        target_label: network_scope
-
-      - source_labels: [__meta_docker_network_ip]
-        target_label: container_ip_in_network
-
-      - source_labels: [__meta_docker_port_private]
-        target_label: container_private_port
-
-      - source_labels: [__meta_docker_port_public]
-        target_label: container_public_port
-
-      - source_labels: [__meta_docker_port_public_ip]
-        target_label: container_public_ip
-
       - source_labels: [__meta_docker_container_label_com_docker_compose_project]
         target_label: compose_project
 
       - source_labels: [__meta_docker_container_label_com_docker_compose_service]
         target_label: compose_service
-
-      - source_labels: [__meta_docker_container_label_com_docker_compose_container_number]
-        target_label: compose_container_number
-
-      - source_labels: [__meta_docker_container_label_com_docker_compose_version]
-        target_label: compose_version
 
       - source_labels: [__meta_docker_container_name]
         action: replace
