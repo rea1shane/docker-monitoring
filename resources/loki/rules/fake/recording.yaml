@@ -1,10 +1,13 @@
 groups:
-  - name: Loki logs disk usage
+  - name: statistic
     interval: 1m
     rules:
-      - record: logs:bytes_over_time_1m
+      - record: loki_recording:logs:bytes1m
         expr: |
           bytes_over_time({container_name=~".+"}[1m])
-      - record: container_name_and_container_id:logs:rate_1m
+      - record: loki_recording:logs:count1m
         expr: |
-          sum by (container_name, container_id) (rate({container_name=~".+"}[1m]))
+          count_over_time({container_name=~".+"}[1m])
+      - record: loki_recording:logs:rate1m
+        expr: |
+          sum by (compose_project, compose_service, container_id, container_name, host_ip, host_name, log_stream) (rate({container_name=~".+"}[1m]))

@@ -1,12 +1,13 @@
 groups:
-  - name: Exception
+  - name: exception
+    interval: 1m
     rules:
-      - alert: Error occurred
+      - alert: ErrorOccurred
         expr: |
           count_over_time({container_id=~".+"} | logfmt level | level = "error" [1m]) > 0
         for: 0m
         labels:
           severity: page
         annotations:
-          labels: container_name={{ $labels.container_name }}, container_id={{ $labels.container_id }}
+          labels: host_name={{ $labels.host_name }}, host_ip={{ $labels.host_ip }}, container_name={{ $labels.container_name }}, container_id={{ $labels.container_id }}
           summary: Error occurred in past 1 minute.
