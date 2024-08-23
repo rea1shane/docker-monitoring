@@ -14,8 +14,14 @@ rule_files:
 
 scrape_configs:
   - # https://prometheus.io/docs/guides/file-sd/
-    job_name: "file_sd"
+    job_name: file_sd
     file_sd_configs:
       - refresh_interval: 5m
         files:
           - /etc/prometheus/targets.json
+
+  - job_name: cadvisor
+    scrape_interval: 5s
+    file_sd_configs:
+      - files:
+          - /etc/prometheus/cadvisor.json

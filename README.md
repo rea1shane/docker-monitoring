@@ -12,5 +12,6 @@ Includes the following services:
 | Blackbox exporter | `9115`       | [GitHub](https://github.com/prometheus/blackbox_exporter) | [`blackbox.yml`](https://github.com/prometheus/blackbox_exporter/raw/master/blackbox.yml)                                  | -                                                                |
 | Loki              | `3100`       | [GitHub](https://github.com/grafana/loki)                 | [`loki-docker-config.yaml`](https://github.com/grafana/loki/raw/main/cmd/loki/loki-docker-config.yaml)                     | [Link](https://grafana.com/docs/loki/latest/)                    |
 | Promtail          | -            | Included in [Loki](https://github.com/grafana/loki)       | [`promtail-docker-config.yaml`](https://github.com/grafana/loki/raw/main/clients/cmd/promtail/promtail-docker-config.yaml) | [Link](https://grafana.com/docs/loki/latest/send-data/promtail/) |
+| cAdvisor          | `8080`       | [GitHub](https://github.com/google/cadvisor)              | -                                                                                                                          | [Link](https://github.com/google/cadvisor/tree/master/docs)      |
 
 Some services will store data persistently in the `data` folder. Run `make clean` to clean them up.
