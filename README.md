@@ -14,6 +14,6 @@ Includes the following services:
 | Promtail          | -            | Included in [Loki](https://github.com/grafana/loki)       | [`promtail-docker-config.yaml`](https://github.com/grafana/loki/raw/main/clients/cmd/promtail/promtail-docker-config.yaml) | [Link](https://grafana.com/docs/loki/latest/send-data/promtail/) |
 | cAdvisor          | `8080`       | [GitHub](https://github.com/google/cadvisor)              | -                                                                                                                          | [Link](https://github.com/google/cadvisor/tree/master/docs)      |
 
-cAdvisor not collected by default, edit `resources/prometheus/prometheus.yml` to collect it.
+cAdvisor is disabled by default, edit `resources/prometheus/prometheus.yml` to enable it.
 
 Some services will store data persistently in the `data` folder. Run `make clean` to clean them up.
