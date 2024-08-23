@@ -2,12 +2,14 @@ groups:
   - name: statistic
     interval: 1m
     rules:
-      - record: loki_recording:logs:bytes1m
-        expr: |
-          bytes_over_time({container_name=~".+"}[1m])
+      # size
+      - record: loki_recording:bytes:sum1m
+        expr: bytes_over_time({container_name=~".+"}[1m])
+      - record: loki_recording:bytes_per_second:rate1m
+        expr: bytes_rate({container_name=~".+"}[1m])
+
+      # number
       - record: loki_recording:logs:count1m
-        expr: |
-          count_over_time({container_name=~".+"}[1m])
-      - record: loki_recording:logs:rate1m
-        expr: |
-          sum by (compose_project, compose_service, container_id, container_name, host_ip, host_name, log_stream) (rate({container_name=~".+"}[1m]))
+        expr: count_over_time({container_name=~".+"}[1m])
+      - record: loki_recording:logs_per_second:rate1m
+        expr: rate({container_name=~".+"}[1m])
