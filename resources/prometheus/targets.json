@@ -1,6 +1,14 @@
 [
     {
         "targets": [
+            "host.docker.internal:9323"
+        ],
+        "labels": {
+            "job": "docker"
+        }
+    },
+    {
+        "targets": [
             "localhost:9090"
         ],
         "labels": {
