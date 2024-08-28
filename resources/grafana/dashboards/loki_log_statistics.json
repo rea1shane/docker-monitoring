@@ -773,7 +773,10 @@
     ],
     "refresh": "1m",
     "schemaVersion": 39,
-    "tags": [],
+    "tags": [
+        "loki",
+        "log"
+    ],
     "templating": {
         "list": []
     },
