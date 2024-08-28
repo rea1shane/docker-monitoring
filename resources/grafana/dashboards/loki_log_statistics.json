@@ -497,7 +497,7 @@
                     "refId": "A"
                 }
             ],
-            "title": "Number of logs growth in past 24h",
+            "title": "Log growth in past 24h",
             "type": "stat"
         },
         {
@@ -593,7 +593,7 @@
                     "refId": "A"
                 }
             ],
-            "title": "Number of logs written",
+            "title": "Log written",
             "type": "timeseries"
         },
         {
@@ -667,7 +667,7 @@
                     "refId": "A"
                 }
             ],
-            "title": "Number of logs growth rate in past 1m",
+            "title": "Log growth rate in past 1m",
             "type": "stat"
         },
         {
@@ -767,7 +767,7 @@
                     "refId": "A"
                 }
             ],
-            "title": "Number of logs write rate",
+            "title": "Log write rate",
             "type": "timeseries"
         }
     ],
