@@ -762,7 +762,7 @@
                     "editorMode": "code",
                     "expr": "loki_recording:logs_per_second:rate1m",
                     "instant": false,
-                    "legendFormat": "__auto",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
                     "range": true,
                     "refId": "A"
                 }
