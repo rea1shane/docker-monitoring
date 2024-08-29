@@ -306,7 +306,6 @@
                     "editorMode": "code",
                     "exemplar": false,
                     "expr": "sum_over_time(loki_recording:bytes:sum1m[1d])",
-                    "format": "time_series",
                     "instant": true,
                     "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
                     "range": false,
