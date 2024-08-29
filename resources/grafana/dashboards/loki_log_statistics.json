@@ -139,14 +139,14 @@
                         "uid": null
                     },
                     "editorMode": "code",
-                    "expr": "sum(sum_over_time(loki_recording:bytes:sum1m[1d]))",
+                    "expr": "sum(sum_over_time(loki_recording:bytes:sum1m[$__range]))",
                     "instant": false,
                     "legendFormat": "__auto",
                     "range": true,
                     "refId": "A"
                 }
             ],
-            "title": "Log size growth in past 24h",
+            "title": "Log size growth in time range",
             "type": "stat"
         },
         {
@@ -305,14 +305,14 @@
                     },
                     "editorMode": "code",
                     "exemplar": false,
-                    "expr": "sum_over_time(loki_recording:bytes:sum1m[1d])",
+                    "expr": "sum_over_time(loki_recording:bytes:sum1m[$__range])",
                     "instant": true,
                     "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
                     "range": false,
                     "refId": "A"
                 }
             ],
-            "title": "Log size growth in past 24h",
+            "title": "Log size growth in time range",
             "type": "piechart"
         },
         {
@@ -634,14 +634,14 @@
                         "uid": null
                     },
                     "editorMode": "code",
-                    "expr": "sum(sum_over_time(loki_recording:logs:count1m[1d]))",
+                    "expr": "sum(sum_over_time(loki_recording:logs:count1m[$__range]))",
                     "instant": false,
                     "legendFormat": "__auto",
                     "range": true,
                     "refId": "A"
                 }
             ],
-            "title": "Log growth in past 24h",
+            "title": "Log growth in time range",
             "type": "stat"
         },
         {
