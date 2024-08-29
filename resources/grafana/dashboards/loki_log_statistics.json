@@ -18,6 +18,12 @@
             "version": "11.1.4"
         },
         {
+            "type": "panel",
+            "id": "piechart",
+            "name": "Pie chart",
+            "version": ""
+        },
+        {
             "type": "datasource",
             "id": "prometheus",
             "name": "Prometheus",
@@ -248,6 +254,76 @@
             "fieldConfig": {
                 "defaults": {
                     "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        }
+                    },
+                    "fieldMinMax": false,
+                    "mappings": [],
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 0,
+                "y": 5
+            },
+            "id": 11,
+            "options": {
+                "displayLabels": [],
+                "legend": {
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": false
+                },
+                "pieType": "pie",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "tooltip": {
+                    "mode": "multi",
+                    "sort": "asc"
+                }
+            },
+            "pluginVersion": "11.1.4",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "prometheus",
+                        "uid": null
+                    },
+                    "editorMode": "code",
+                    "exemplar": false,
+                    "expr": "sum_over_time(loki_recording:bytes:sum1m[1d])",
+                    "format": "time_series",
+                    "instant": true,
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "range": false,
+                    "refId": "A"
+                }
+            ],
+            "title": "Log size growth in past 24h",
+            "type": "piechart"
+        },
+        {
+            "datasource": {
+                "type": "prometheus",
+                "uid": null
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
                         "mode": "thresholds"
                     },
                     "fieldMinMax": false,
@@ -273,7 +349,7 @@
                 "h": 4,
                 "w": 3,
                 "x": 0,
-                "y": 5
+                "y": 11
             },
             "id": 3,
             "options": {
@@ -413,6 +489,75 @@
             ],
             "title": "Log size write rate",
             "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "prometheus",
+                "uid": null
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        }
+                    },
+                    "fieldMinMax": false,
+                    "mappings": [],
+                    "unit": "binBps"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 0,
+                "y": 15
+            },
+            "id": 12,
+            "options": {
+                "displayLabels": [],
+                "legend": {
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": false
+                },
+                "pieType": "pie",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "tooltip": {
+                    "mode": "multi",
+                    "sort": "asc"
+                }
+            },
+            "pluginVersion": "11.1.4",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "prometheus",
+                        "uid": null
+                    },
+                    "editorMode": "code",
+                    "exemplar": false,
+                    "expr": "loki_recording:bytes_per_second:rate1m",
+                    "instant": true,
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "range": false,
+                    "refId": "A"
+                }
+            ],
+            "title": "Log size write rate in past 1m",
+            "type": "piechart"
         },
         {
             "collapsed": false,
@@ -788,6 +933,6 @@
     "timezone": "browser",
     "title": "Loki log statistics",
     "uid": "advomi8vlvf9ce",
-    "version": 31,
+    "version": 34,
     "weekStart": ""
 }
