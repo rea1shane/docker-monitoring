@@ -379,10 +379,11 @@
                         "uid": null
                     },
                     "editorMode": "code",
+                    "exemplar": false,
                     "expr": "sum(loki_recording:bytes_per_second:rate1m)",
-                    "instant": false,
+                    "instant": true,
                     "legendFormat": "__auto",
-                    "range": true,
+                    "range": false,
                     "refId": "A"
                 }
             ],
@@ -872,10 +873,11 @@
                         "uid": null
                     },
                     "editorMode": "code",
+                    "exemplar": false,
                     "expr": "sum(loki_recording:logs_per_second:rate1m)",
-                    "instant": false,
+                    "instant": true,
                     "legendFormat": "__auto",
-                    "range": true,
+                    "range": false,
                     "refId": "A"
                 }
             ],
@@ -1069,6 +1071,6 @@
     "timezone": "browser",
     "title": "Loki log statistics",
     "uid": "advomi8vlvf9ce",
-    "version": 62,
+    "version": 64,
     "weekStart": ""
 }
