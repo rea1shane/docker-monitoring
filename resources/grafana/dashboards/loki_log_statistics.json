@@ -119,9 +119,7 @@
                     "values": false
                 },
                 "showPercentChange": true,
-                "text": {
-                    "valueSize": 64
-                },
+                "text": {},
                 "textMode": "auto",
                 "wideLayout": true
             },
@@ -290,9 +288,7 @@
                     "values": false
                 },
                 "showPercentChange": false,
-                "text": {
-                    "valueSize": 64
-                },
+                "text": {},
                 "textMode": "auto",
                 "wideLayout": true
             },
@@ -476,9 +472,7 @@
                     "values": false
                 },
                 "showPercentChange": true,
-                "text": {
-                    "valueSize": 64
-                },
+                "text": {},
                 "textMode": "auto",
                 "wideLayout": true
             },
@@ -646,9 +640,7 @@
                     "values": false
                 },
                 "showPercentChange": false,
-                "text": {
-                    "valueSize": 64
-                },
+                "text": {},
                 "textMode": "auto",
                 "wideLayout": true
             },
