@@ -99,7 +99,7 @@
                 "overrides": []
             },
             "gridPos": {
-                "h": 10,
+                "h": 4,
                 "w": 3,
                 "x": 0,
                 "y": 1
@@ -120,7 +120,7 @@
                 },
                 "showPercentChange": true,
                 "text": {
-                    "valueSize": 64
+                    "valueSize": 32
                 },
                 "textMode": "auto",
                 "wideLayout": true
@@ -270,10 +270,10 @@
                 "overrides": []
             },
             "gridPos": {
-                "h": 10,
+                "h": 4,
                 "w": 3,
                 "x": 0,
-                "y": 11
+                "y": 5
             },
             "id": 3,
             "options": {
@@ -291,7 +291,7 @@
                 },
                 "showPercentChange": false,
                 "text": {
-                    "valueSize": 64
+                    "valueSize": 32
                 },
                 "textMode": "auto",
                 "wideLayout": true
@@ -456,7 +456,7 @@
                 "overrides": []
             },
             "gridPos": {
-                "h": 10,
+                "h": 4,
                 "w": 3,
                 "x": 0,
                 "y": 22
@@ -477,7 +477,7 @@
                 },
                 "showPercentChange": true,
                 "text": {
-                    "valueSize": 64
+                    "valueSize": 32
                 },
                 "textMode": "auto",
                 "wideLayout": true
@@ -626,10 +626,10 @@
                 "overrides": []
             },
             "gridPos": {
-                "h": 10,
+                "h": 4,
                 "w": 3,
                 "x": 0,
-                "y": 32
+                "y": 26
             },
             "id": 4,
             "options": {
@@ -647,7 +647,7 @@
                 },
                 "showPercentChange": false,
                 "text": {
-                    "valueSize": 64
+                    "valueSize": 32
                 },
                 "textMode": "auto",
                 "wideLayout": true
@@ -788,6 +788,6 @@
     "timezone": "browser",
     "title": "Loki log statistics",
     "uid": "advomi8vlvf9ce",
-    "version": 21,
+    "version": 31,
     "weekStart": ""
 }
