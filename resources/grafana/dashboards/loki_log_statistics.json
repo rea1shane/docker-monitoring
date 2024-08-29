@@ -60,7 +60,7 @@
     },
     "editable": true,
     "fiscalYearStartMonth": 0,
-    "graphTooltip": 0,
+    "graphTooltip": 1,
     "id": null,
     "links": [],
     "panels": [
@@ -1071,6 +1071,6 @@
     "timezone": "browser",
     "title": "Loki log statistics",
     "uid": "advomi8vlvf9ce",
-    "version": 64,
+    "version": 69,
     "weekStart": ""
 }
