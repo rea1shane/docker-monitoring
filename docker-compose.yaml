@@ -122,15 +122,12 @@ services:
 
   # https://min.io/docs/minio/linux/reference/minio-server/minio-server.html
   # Distributed MinIO config file: https://github.com/minio/minio/blob/master/docs/distributed/CONFIG.md
+  # Create default buckets: https://github.com/minio/minio/issues/4769#issuecomment-331033735
   minio:
     image: minio/minio
     container_name: minio
-    command:
-      - minio
-      - server
-      - --console-address
-      - ":9001"
-      - /data
+    entrypoint: sh
+    command: -c 'mkdir -p /data/loki && /usr/bin/minio server --console-address ":9001" /data'
     environment:
       - MINIO_ROOT_USER=monitoring
       - MINIO_ROOT_PASSWORD=monitoring
