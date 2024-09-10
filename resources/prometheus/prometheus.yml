@@ -26,6 +26,10 @@ scrape_configs:
   #     - files:
   #         - /etc/prometheus/cadvisor.json
 
+  # https://min.io/docs/minio/linux/operations/monitoring/collect-minio-metrics-using-prometheus.html
+  # 1. run `mc alias ls`
+  # 2. edit `/tmp/.mc/config.json`, fill accessKey(username) and secretKey(password)
+  # 3. run `mc admin prometheus generate local`
   - job_name: minio-job
     bearer_token: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwcm9tZXRoZXVzIiwic3ViIjoibW9uaXRvcmluZyIsImV4cCI6NDg3OTUzOTg0MX0.44-v83Ssx8OA7UCoXKA9HBoghoKOmSehrg73BSfnrF9QdPuLxi2t8GyY45YDl5Go7K3i0WPQSwIVdiTmI96UrQ
     metrics_path: /minio/v2/metrics/cluster
