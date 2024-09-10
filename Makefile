@@ -12,6 +12,23 @@ env:
 up: env
 	docker compose -p $(COMPOSE_NAME) up -d
 
+.PHONY: up-managers
+up-managers: env
+	docker compose -p $(COMPOSE_NAME) up -d \
+		prometheus \
+		grafana \
+		pushgateway \
+		alertmanager \
+		blackbox_exporter \
+		loki \
+		minio
+
+.PHONY: up-agents
+up-agents: env
+	docker compose -p $(COMPOSE_NAME) up -d \
+		node_exporter \
+		promtail
+
 .PHONY: down
 down:
 	docker compose -p $(COMPOSE_NAME) down
