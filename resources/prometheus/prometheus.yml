@@ -25,3 +25,10 @@ scrape_configs:
   #   file_sd_configs:
   #     - files:
   #         - /etc/prometheus/cadvisor.json
+
+  - job_name: minio-job
+    bearer_token: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwcm9tZXRoZXVzIiwic3ViIjoibW9uaXRvcmluZyIsImV4cCI6NDg3OTUzOTg0MX0.44-v83Ssx8OA7UCoXKA9HBoghoKOmSehrg73BSfnrF9QdPuLxi2t8GyY45YDl5Go7K3i0WPQSwIVdiTmI96UrQ
+    metrics_path: /minio/v2/metrics/cluster
+    scheme: http
+    static_configs:
+      - targets: ["minio:9000"]
