@@ -238,7 +238,7 @@
                     "editorMode": "code",
                     "expr": "loki_recording:bytes:sum1m",
                     "instant": false,
-                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}}{{filename}} | {{container_id}}",
                     "range": true,
                     "refId": "A"
                 }
@@ -307,7 +307,7 @@
                     "exemplar": false,
                     "expr": "sum_over_time(loki_recording:bytes:sum1m[$__range])",
                     "instant": true,
-                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}}{{filename}} | {{container_id}}",
                     "range": false,
                     "refId": "A"
                 }
@@ -482,7 +482,7 @@
                     "editorMode": "code",
                     "expr": "loki_recording:bytes_per_second:rate1m",
                     "instant": false,
-                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}}{{filename}} | {{container_id}}",
                     "range": true,
                     "refId": "A"
                 }
@@ -551,7 +551,7 @@
                     "exemplar": false,
                     "expr": "loki_recording:bytes_per_second:rate1m",
                     "instant": true,
-                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}}{{filename}} | {{container_id}}",
                     "range": false,
                     "refId": "A"
                 }
@@ -733,7 +733,7 @@
                     "editorMode": "code",
                     "expr": "loki_recording:logs:count1m",
                     "instant": false,
-                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}}{{filename}} | {{container_id}}",
                     "range": true,
                     "refId": "A"
                 }
@@ -801,7 +801,7 @@
                     "exemplar": false,
                     "expr": "sum_over_time(loki_recording:logs:count1m[$__range])",
                     "instant": true,
-                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}}{{filename}} | {{container_id}}",
                     "range": false,
                     "refId": "A"
                 }
@@ -976,7 +976,7 @@
                     "editorMode": "code",
                     "expr": "loki_recording:logs_per_second:rate1m",
                     "instant": false,
-                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}}{{filename}} | {{container_id}}",
                     "range": true,
                     "refId": "A"
                 }
@@ -1045,7 +1045,7 @@
                     "exemplar": false,
                     "expr": "loki_recording:logs_per_second:rate1m",
                     "instant": true,
-                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}} | {{container_id}}",
+                    "legendFormat": "{{host_name}} | {{host_ip}} | {{container_name}}{{filename}} | {{container_id}}",
                     "range": false,
                     "refId": "A"
                 }
