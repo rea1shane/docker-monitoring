@@ -100,6 +100,7 @@ services:
       - ./data/promtail:/tmp
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/log:/var/log/host:ro
     environment:
       - HOST_NAME=${HOST_NAME}
       - HOST_IP=${HOST_IP}

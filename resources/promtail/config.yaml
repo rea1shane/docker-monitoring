@@ -35,3 +35,8 @@ scrape_configs:
         regex: /(.*)
         replacement: /var/lib/docker/containers/$1/*.log
         target_label: __path__
+
+  - job_name: host_log
+    static_configs:
+      - labels:
+          __path__: /var/log/host/*.log
