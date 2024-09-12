@@ -4,12 +4,12 @@ groups:
     rules:
       # size
       - record: loki_recording:bytes:sum1m
-        expr: bytes_over_time({container_name=~".+"}[1m])
+        expr: bytes_over_time({host_name=~".+"}[1m])
       - record: loki_recording:bytes_per_second:rate1m
-        expr: bytes_rate({container_name=~".+"}[1m])
+        expr: bytes_rate({host_name=~".+"}[1m])
 
       # number
       - record: loki_recording:logs:count1m
-        expr: count_over_time({container_name=~".+"}[1m])
+        expr: count_over_time({host_name=~".+"}[1m])
       - record: loki_recording:logs_per_second:rate1m
-        expr: rate({container_name=~".+"}[1m])
+        expr: rate({host_name=~".+"}[1m])
