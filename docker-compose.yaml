@@ -82,6 +82,8 @@ services:
     image: grafana/loki
     command:
       - -config.file=/etc/loki/config.yaml
+      - -ruler.storage.type=local
+      - -ruler.storage.local.directory=/etc/loki/rules
     volumes:
       - ./resources/loki:/etc/loki
       - ./data/loki:/loki
