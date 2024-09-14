@@ -29,6 +29,7 @@ schema_config:
 # https://github.com/ruanbekker/loki-minio-docker/blob/main/config/loki.yaml
 storage_config:
   aws:
+    # Note the dot in the S3 address for MinIO. This is used because there is no need to specify AWS Region.
     s3: s3://monitoring:monitoring@minio.:9000/loki
     s3forcepathstyle: true
 
