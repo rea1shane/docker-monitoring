@@ -21,7 +21,7 @@
             "type": "grafana",
             "id": "grafana",
             "name": "Grafana",
-            "version": "11.1.4"
+            "version": "11.2.2"
         },
         {
             "type": "datasource",
@@ -65,7 +65,7 @@
             },
             "gridPos": {
                 "h": 33,
-                "w": 12,
+                "w": 5,
                 "x": 0,
                 "y": 0
             },
@@ -144,8 +144,8 @@
             },
             "gridPos": {
                 "h": 33,
-                "w": 12,
-                "x": 12,
+                "w": 19,
+                "x": 5,
                 "y": 0
             },
             "id": 2,
@@ -157,7 +157,7 @@
                     "showLegend": false
                 },
                 "mergeValues": true,
-                "rowHeight": 0.9,
+                "rowHeight": 0.8,
                 "showValue": "never",
                 "tooltip": {
                     "mode": "single",
@@ -171,9 +171,9 @@
                         "uid": null
                     },
                     "editorMode": "code",
-                    "expr": "ALERTS",
+                    "expr": "ALERTS{alertstate=\"firing\"}",
                     "instant": false,
-                    "legendFormat": "{{ alertname }} {{ container_name }}",
+                    "legendFormat": "",
                     "range": true,
                     "refId": "A"
                 }
@@ -182,6 +182,7 @@
             "type": "state-timeline"
         }
     ],
+    "refresh": "5s",
     "schemaVersion": 39,
     "tags": [
         "prometheus",
@@ -191,13 +192,13 @@
         "list": []
     },
     "time": {
-        "from": "now-6h",
+        "from": "now-24h",
         "to": "now"
     },
     "timepicker": {},
     "timezone": "browser",
     "title": "Alerts",
     "uid": "edvkh3c9ts6bka",
-    "version": 3,
+    "version": 1,
     "weekStart": ""
 }
